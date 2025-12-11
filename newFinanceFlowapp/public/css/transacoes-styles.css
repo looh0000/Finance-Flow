@@ -1,0 +1,244 @@
+/* Estilos Específicos para a Página de Transações - Versão Aprimorada (Desktop Split-Grid) */
+
+:root {
+    --primary-blue: #115bda;      /* Azul Principal (Botão, Destaque) */
+    --accent-green: #10dc60;      /* Verde (Receita, Destaque Positivo) */
+    --text-dark: #2c3e50;
+    --text-light: #555;
+    --bg-light: #f4f7f9;          /* Fundo dos Inputs */
+}
+
+.page-content {
+    padding: 30px;
+    background: linear-gradient(to bottom, #e0f7fa, #ffffff); /* Fundo suave */
+    min-height: calc(100vh - 72px);
+}
+
+/* ----------------------------------- */
+/* GRID DE DUAS COLUNAS PRINCIPAL      */
+/* ----------------------------------- */
+.transactions-grid {
+    display: grid;
+    grid-template-columns: 1fr 2fr; /* Formulário (1/3) na esquerda, Histórico/Stats (2/3) na direita */
+    gap: 30px;
+}
+
+.left-column {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.right-column {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* ----------------------------------- */
+/* 1. Formulário de Nova Transação     */
+/* ----------------------------------- */
+.new-transaction-card {
+    background-color: #ffffff;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    height: fit-content; 
+    border-top: 4px solid var(--primary-blue); /* Destaque superior */
+}
+
+.new-transaction-card h2 {
+    color: var(--primary-blue);
+    font-size: 20px;
+    margin-top: 0;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 10px;
+}
+
+.transaction-form label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 5px;
+    color: #333;
+}
+
+.transaction-form input,
+.transaction-form select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    box-sizing: border-box;
+    background-color: var(--bg-light); /* Fundo suave do input */
+}
+
+.form-row {
+    display: flex;
+    gap: 15px;
+}
+
+.form-row .input-group {
+    flex-grow: 1;
+}
+
+.btn-add-transacao {
+    width: 100%;
+    padding: 14px;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 10px;
+    background-color: var(--primary-blue);
+    color: white;
+    transition: background-color 0.2s;
+}
+.btn-add-transacao:hover {
+    background-color: #0c3394;
+}
+
+/* WIDGET: Dica de Organização */
+.tips-card {
+    background-color: #ffffff; 
+    padding: 20px;
+    border-radius: 12px;
+    border-left: 5px solid var(--accent-green);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+.tips-card h3 {
+    color: var(--text-dark);
+    margin-top: 0;
+    font-size: 1.1em;
+}
+.btn-primary-small {
+    display: inline-block;
+    padding: 8px 15px;
+    border-radius: 6px;
+    margin-top: 10px;
+    background-color: var(--primary-blue);
+    color: white;
+    text-decoration: none;
+    font-size: 0.9em;
+    font-weight: bold;
+}
+
+
+/* ----------------------------------- */
+/* 2. Cartão de Estatísticas (Stats)   */
+/* ----------------------------------- */
+.summary-stats-card {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+.stat-item {
+    padding: 10px 0;
+    text-align: center;
+}
+.stat-item h4 {
+    margin: 0;
+    font-size: 0.9em;
+    color: var(--text-light);
+    text-transform: uppercase;
+}
+.stat-item p {
+    margin: 5px 0 0 0;
+    font-size: 1.5em;
+    font-weight: bold;
+    color: var(--text-dark);
+}
+.stat-item .positive { color: var(--accent-green); }
+.stat-item .negative { color: #f44336; }
+
+
+/* ----------------------------------- */
+/* 3. Histórico de Transações          */
+/* ----------------------------------- */
+
+.transaction-history-card {
+    background-color: #ffffff;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    flex-grow: 1; 
+}
+
+.transaction-history-card h2 {
+    color: var(--primary-blue);
+    font-size: 22px;
+    margin-top: 0;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 10px;
+}
+
+.transaction-history-list {
+    list-style: none;
+    padding: 0;
+    max-height: 50vh; 
+    overflow-y: auto;
+}
+
+.history-item {
+    display: flex;
+    align-items: center;
+    padding: 15px 10px;
+    border-bottom: 1px solid #eee;
+}
+
+.item-icon {
+    font-size: 24px;
+    margin-right: 15px;
+}
+
+.item-details {
+    flex-grow: 1;
+}
+
+.item-details h3 {
+    font-size: 16px;
+    font-weight: bold;
+    margin: 0;
+}
+
+.item-details p {
+    font-size: 12px;
+    color: #888;
+    margin: 3px 0 0 0;
+}
+
+.item-info {
+    text-align: right;
+    display: flex;
+    flex-direction: column;
+}
+
+.item-amount {
+    font-weight: bold;
+    font-size: 16px;
+}
+
+/* Cores dos Ícones e Valores */
+.history-item.receita .item-icon ion-icon { color: var(--accent-green); }
+.history-item.despesa .item-icon ion-icon { color: #f44336; }
+.history-item.receita .item-amount { color: var(--accent-green); }
+.history-item.despesa .item-amount { color: #f44336; }
+
+.item-date {
+    font-size: 12px;
+    color: #999;
+}
+
+/* --- Mensagens de Feedback --- */
+.alert { padding: 15px; margin-bottom: 20px; border-radius: 8px; font-weight: bold; }
+.error-message { background-color: #f8d7da; color: #721c24; border: 1px solid #f5c6cb; }
+.success-message { background-color: #d4edda; color: #155724; border: 1px solid #c3e6cb; }

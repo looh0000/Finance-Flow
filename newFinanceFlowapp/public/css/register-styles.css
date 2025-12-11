@@ -1,0 +1,544 @@
+/* Adaptação de register.page.scss para Layout SPLIT-SCREEN Desktop/Tecnológico */
+
+:root {
+    --primary-blue: #115bda;
+    --accent-blue-cta: #104baa;
+    --background-blue: #e0f2ff; 
+    --tech-panel-bg: #f4f7f9;   
+    --text-light: #555;
+} 
+
+body { 
+    background: radial-gradient(circle, #9cc4ef, #7fa7e2, #587bed, #7196e1, #4538fb, #4b69ff, #3628ff);
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 90vh; 
+}
+
+/* ----------------------------------- */
+/* HEADER E ESTRUTURA BASE             */
+/* ----------------------------------- */ 
+
+.header {
+    width: 100%;
+    background-color: var(--primary-blue);
+    color: white;
+    padding: 15px 30px;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.header h1 {
+    margin: 0 auto;
+    font-size: 22px;
+}
+
+.back-button {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 5px 10px;
+}
+
+/* Container Principal Flutuante e Centralizado */
+.split-content-wrapper {
+    flex-grow: 1;
+    display: flex;
+    max-width: 1000px; 
+    width: 60%;
+    margin: 40px auto;
+    border-radius: 15px;
+    overflow: hidden; 
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2); 
+}
+
+/* ----------------------------------- */
+/* COLUNA 1: FORMULÁRIO                */
+/* ----------------------------------- */
+
+.form-container {
+    padding: 40px;
+    background-color: #ffffff;
+    flex: 1; /* Ocupa uma parte flexível */
+}
+
+.form-container h2 {
+    text-align: center;
+    margin-bottom: 25px;
+    color: var(--text-dark);
+    font-size: 26px;
+    font-weight: 700;
+    border-bottom: 2px solid var(--background-blue);
+    padding-bottom: 10px;
+}
+
+/* Layout de Grade para Inputs (2 COLUNAS) */
+.form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px 30px;
+    margin-bottom: 20px;
+}
+
+.form-group.span-2 {
+    grid-column: span 2; 
+}
+
+.form-group label {
+    font-weight: 600;
+    margin-bottom: 5px;
+    color: var(--text-dark);
+    font-size: 1em;
+}
+
+.form-container input:not([type="checkbox"]),
+.form-container select {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-sizing: border-box;
+    background-color: var(--tech-panel-bg); 
+    transition: border-color 0.2s;
+}
+
+.form-container input:focus,
+.form-container select:focus {
+    border-color: var(--primary-blue);
+    background-color: #fff;
+}
+
+/* ----------------------------------- */
+/* ESTILO PARA SENHAS E VISIBILIDADE   */
+/* ----------------------------------- */
+
+.password-group {
+    position: relative;
+    margin-bottom: 20px; 
+}
+
+.password-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+.password-wrapper input {
+    padding-right: 40px !important; 
+}
+
+.password-toggle {
+    position: absolute;
+    right: 10px;
+    cursor: pointer;
+    color: var(--text-light); 
+    font-size: 20px;
+    z-index: 2; 
+}
+
+.validation-message {
+    color: #f44336; 
+    font-size: 0.85em;
+    margin-top: 5px;
+    display: block;
+}
+
+.form-group.has-error input,
+.form-group.has-error select {
+    border: 2px solid #f44336 !important;
+}
+
+
+/* ----------------------------------- */
+/* CHECKBOX E BOTÃO DE SUBMISSÃO       */
+/* ----------------------------------- */
+
+.darkmode-toggle {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: #333;
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    padding: 8px 12px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+.darkmode-toggle:hover {
+    background: #555;
+}
+
+body.dark-mode .darkmode-toggle {
+    background: #f1f1f1;
+    color: #000;
+}
+
+.form-container {
+    position: relative; 
+}
+
+.checkbox-container {
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+    font-size: 0.9em;
+    color: var(--text-light);
+    margin-bottom: 25px;
+    grid-column: span 2;
+}
+
+.btn-register {
+    grid-column: span 2;
+    padding: 15px;
+    border: none;
+    border-radius: 8px;
+    background-color: var(--accent-blue-cta);
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    box-shadow: 0 4px 10px var(--shadow-blue-strong);
+}
+
+.btn-register:hover {
+    background-color: #100abf;
+}
+
+.login-link {
+    grid-column: span 2;
+    text-align: center;
+    margin-top: 15px;
+    font-size: 1em;
+}
+.login-link a {
+    color: var(--primary-blue);
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* ----------------------------------- */
+/* COLUNA 2: PAINEL INFORMATIVO        */
+/* ----------------------------------- */
+
+.info-side-panel {
+    flex: 1; 
+    background: linear-gradient(135deg, var(--primary-blue), #0f46d0); /* Gradiente forte */
+    color: white;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.side-panel-logo {
+    max-width: 100px;
+    filter: brightness(2); 
+    margin-bottom: 20px;
+}
+
+.info-side-panel h2 {
+    font-size: 1.8em;
+    margin-bottom: 30px;
+    font-weight: 700;
+}
+
+.info-list {
+    text-align: left;
+}
+
+.info-item {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 20px;
+}
+
+.info-item ion-icon {
+    font-size: 30px;
+    color: var(--accent-blue-cta);
+    margin-right: 15px;
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 5px;
+    border-radius: 50%;
+}
+
+.info-item p {
+    font-size: 15px;
+    color: #e0e0e0;
+    line-height: 1.4;
+    margin: 0;
+}
+
+/* =============================== */
+/* DARK MODE CADASTRO              */
+/* =============================== */
+body.dark-mode {
+    background: #0f0f0f;
+    color: #e0e0e0;
+}
+
+/* Container principal */
+body.dark-mode .split-content-wrapper {
+    background-color: #1e1e1e;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+}
+
+/* Painel do formulário */
+body.dark-mode .form-container {
+    background-color: #1e1e1e;
+}
+body.dark-mode .form-container h2 {
+    color: #f1f1f1;
+    border-bottom: 2px solid #333;
+}
+body.dark-mode .form-group label {
+    color: #ddd;
+}
+body.dark-mode .form-container input,
+body.dark-mode .form-container select {
+    background-color: #2d2d2d;
+    color: #f1f1f1;
+    border: 1px solid #444;
+}
+body.dark-mode .form-container input:focus,
+body.dark-mode .form-container select:focus {
+    background-color: #1e1e1e;
+    border-color: #4a90e2;
+}
+
+/* Checkbox */
+body.dark-mode .checkbox-container {
+    color: #bbb;
+}
+
+/* Botão de cadastro */
+body.dark-mode .btn-register {
+    background-color: #2563eb;
+    color: #fff;
+}
+body.dark-mode .btn-register:hover {
+    background-color: #1e40af;
+}
+
+/* Link login */
+body.dark-mode .login-link a {
+    color: #4a90e2;
+}
+
+/* Painel lateral */
+body.dark-mode .info-side-panel {
+    background: linear-gradient(135deg, #0f172a, #1e293b);
+    color: #f1f1f1;
+}
+body.dark-mode .info-item p {
+    color: #d1d5db;
+}
+body.dark-mode .info-item ion-icon {
+    color: #60a5fa;
+    background-color: rgba(255, 255, 255, 0.05);
+}
+
+/* Mensagens */
+body.dark-mode .error-message {
+    background-color: #3f1d1d;
+    color: #fca5a5;
+    border: 1px solid #b91c1c;
+}
+body.dark-mode .success-message {
+    background-color: #1e3a2f;
+    color: #a7f3d0;
+    border: 1px solid #10b981;
+}
+
+/* =============================== */
+/* RESPONSIVIDADE                  */
+/* =============================== */
+
+/* Celulares: telas pequenas */
+@media (max-width: 600px) {
+    .split-content-wrapper {
+        flex-direction: column;      
+        width: 90%;                  
+        margin: 20px auto;
+    }
+
+    .form-container {
+        padding: 20px;
+    }
+
+    .info-side-panel {
+        display: none;              
+    }
+
+    .form-grid {
+        grid-template-columns: 1fr;  
+        gap: 15px;
+    }
+
+    .btn-register, .login-link {
+        grid-column: 1;              
+    }
+
+    .header h1 {
+        font-size: 18px;
+    }
+}
+
+/* Tablets: telas médias */
+@media (min-width: 601px) and (max-width: 1024px) {
+    .split-content-wrapper {
+        flex-direction: row;         
+        width: 90%;
+    }
+
+    .form-container,
+    .info-side-panel {
+        flex: 1 1 50%;              
+    }
+
+    .form-grid {
+        grid-template-columns: 1fr 1fr;  
+    }
+}
+
+/* Ajustes de fontes e ícones para responsividade */
+@media (max-width: 768px) {
+    .form-container h2 {
+        font-size: 22px;
+    }
+
+    .info-side-panel h2 {
+        font-size: 1.5em;
+    }
+
+    .info-item ion-icon {
+        font-size: 25px;
+        margin-right: 10px;
+    }
+}
+
+/* Inputs e botões sempre adaptam */
+.form-container input,
+.form-container select,
+.btn-register {
+    max-width: 100%;
+    box-sizing: border-box;
+}
+
+
+
+/* Mensagens de Feedback */
+.alert { padding: 15px; margin-bottom: 20px; border-radius: 8px; font-weight: bold; }
+.error-message { background-color: #f8d7da; color: #721c24; border: 1px solid #f5c6cb; }
+.success-message { background-color: #d4edda; color: #155724; border: 1px solid #c3e6cb; }
+
+/* ============================ */
+/* MEDIA QUERIES RESPONSIVO     */
+/* ============================ */
+
+/* Tablets */
+@media (max-width: 992px) {
+    .main-hero-section {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .hero-text {
+        padding: 0 20px;
+    }
+
+    .hero-image {
+        text-align: center;
+    }
+
+    .value-proposition-section .three-column-grid,
+    .three-column-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+        padding: 0 20px;
+    }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+    .landing-header {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 15px 20px;
+    }
+
+    .main-nav {
+        justify-content: flex-start;
+        gap: 15px;
+    }
+
+    .main-hero-section {
+        padding: 40px 20px;
+    }
+
+    .hero-text h1 {
+        font-size: 2.2em;
+    }
+
+    .hero-text p {
+        font-size: 1em;
+    }
+
+    .value-proposition-section .three-column-grid,
+    .three-column-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+        padding: 0 10px;
+    }
+
+    .key-features {
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+    }
+
+    .hero-image img {
+        max-width: 80%;
+        margin: 0 auto;
+    }
+
+    .dicas-section {
+        padding: 20px 10px;
+    }
+
+    .dica-card {
+        padding: 20px 15px;
+    }
+}
+
+/* Pequenos celulares */
+@media (max-width: 480px) {
+    .hero-text h1 {
+        font-size: 1.8em;
+    }
+
+    .btn-call-to-action {
+        padding: 12px 25px;
+        font-size: 1em;
+    }
+
+    .header-logo {
+        max-width: 80px;
+    }
+
+    .accessibility-tools button {
+        font-size: 1.4em;
+    }
+}

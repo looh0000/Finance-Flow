@@ -1,0 +1,100 @@
+/* Adaptação de src/app/support/support.page.scss para Layout Web/Desktop */
+
+.page-content {
+    padding: 30px;
+    background: linear-gradient(to bottom, #e0f7fa, #ffffff);
+    min-height: calc(100vh - 72px);
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.support-card {
+    max-width: 600px; 
+    width: 90%;
+    padding: 30px;
+    background-color: #ffffff; 
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.support-intro {
+    font-size: 16px;
+    color: #555; 
+    text-align: center;
+    margin-bottom: 30px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 15px;
+}
+
+.support-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.support-item {
+    /* Adaptação do ion-item */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    margin-bottom: 12px;
+    border: 1px solid #a0a4aa;
+    border-radius: 8px;
+    background-color: #ffffff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.08);
+    transition: box-shadow 0.3s ease, transform 0.2s ease;
+}
+
+.support-item:hover {
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); 
+    transform: scale(1.01); 
+}
+
+.support-item label {
+    color: #495057; /* Cor do texto */
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.btn-support {
+    /* Adaptação do .support-button */
+    text-decoration: none;
+    color: white;
+    font-size: 14px;
+    font-weight: bold;
+    padding: 10px 15px;
+    border-radius: 6px;
+    background-color: #007aff;
+    transition: background-color 0.3s ease;
+}
+
+.btn-support:hover {
+    background-color: #0056b3; 
+    transform: scale(1.04);
+}
+
+.contact-details {
+    margin-top: 40px;
+    padding-top: 20px;
+    border-top: 1px solid #ddd;
+}
+
+.contact-details h4 {
+    color: #115bda;
+    margin-bottom: 15px;
+    font-size: 18px;
+}
+
+.contact-details p {
+    font-size: 15px;
+    margin: 8px 0;
+}
+
+.contact-details strong {
+    font-weight: bold;
+    color: #333;
+    display: inline-block;
+    min-width: 120px;
+}

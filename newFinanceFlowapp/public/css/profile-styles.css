@@ -1,0 +1,181 @@
+/* Estilos Específicos para a Página de Perfil - Versão Moderna/Profissional */
+
+:root {
+    --primary-blue: #115bda;      /* Azul Principal */
+    --accent-blue-cta: #104baa;   /* Azul de Ação/Destaque */
+    --background-blue: #e0f2ff;   /* Fundo suave da página */
+    --tech-panel-bg: #f4f7f9;     /* Fundo dos Inputs */
+    --text-dark: #2c3e50;
+    --text-light: #555;
+    --accent-green: #10dc60;      /* Verde para Sucesso */
+}
+
+/* Layout principal em duas colunas (herdados do dashboard-styles.css) */
+.page-content {
+    padding: 30px;
+    background: linear-gradient(to bottom, var(--background-blue), #ffffff); 
+    min-height: calc(100vh - 72px);
+    display: grid;
+    grid-template-columns: 1fr 2fr; /* Info à esquerda, Formulários à direita */
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Cartões base (Cards flutuantes) */
+.profile-card {
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); /* Sombra mais nítida */
+    margin-bottom: 25px;
+    transition: transform 0.2s;
+}
+.profile-card:hover {
+    transform: translateY(-2px);
+}
+
+
+/* ----------------------------------- */
+/* COLUNA 1: DETALHES DO USUÁRIO       */
+/* ----------------------------------- */
+
+.profile-info-column {
+    grid-column: 1 / 2;
+}
+
+.profile-details-card {
+    text-align: center;
+    border-top: 5px solid var(--primary-blue);
+}
+
+.profile-picture-section {
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+    border-bottom: 1px solid var(--tech-panel-bg);
+}
+
+.profile-avatar {
+    font-size: 80px;
+    color: var(--primary-blue); 
+    margin-bottom: 10px;
+}
+
+.profile-details-card h2 {
+    margin: 5px 0 0 0;
+    color: var(--text-dark);
+    font-weight: 700;
+}
+
+.detail-group {
+    text-align: left;
+}
+
+.detail-group h4 {
+    color: var(--primary-blue);
+    border-bottom: 1px solid var(--background-blue);
+    padding-bottom: 5px;
+    margin-top: 15px;
+    font-size: 1em;
+}
+
+.detail-group p {
+    margin: 10px 0;
+    font-size: 15px;
+    display: flex;
+    justify-content: space-between;
+}
+.detail-group strong {
+    font-weight: 600;
+    color: var(--text-dark);
+}
+
+
+/* ----------------------------------- */
+/* COLUNA 2: FORMULÁRIOS DE EDIÇÃO     */
+/* ----------------------------------- */
+
+.profile-form-column {
+    grid-column: 2 / 3;
+}
+
+.profile-card h2 {
+    color: var(--primary-blue);
+    font-size: 22px;
+    margin-top: 0;
+    margin-bottom: 20px;
+    border-bottom: 1px solid var(--tech-panel-bg);
+    padding-bottom: 10px;
+}
+
+.profile-form label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 5px;
+    color: var(--text-dark);
+}
+
+.profile-form input[type="text"],
+.profile-form input[type="email"],
+.profile-form input[type="password"],
+.profile-form input[type="date"],
+.profile-form input[type="tel"], /* NOVO: Estilo para campo de telefone */
+.profile-form select {
+    width: 100%;
+    padding: 12px 15px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px; /* Inputs arredondados */
+    box-sizing: border-box;
+    background-color: var(--tech-panel-bg);
+    font-size: 16px;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.profile-form input:focus,
+.profile-form select:focus {
+    border-color: var(--primary-blue);
+    box-shadow: 0 0 0 3px rgba(17, 91, 218, 0.2);
+    background-color: #ffffff;
+    outline: none;
+}
+
+/* Botões de Ação */
+.btn-save-profile,
+.btn-change-password {
+    width: 100%;
+    padding: 14px;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.btn-save-profile {
+    background-color: var(--accent-blue-cta); 
+    color: white;
+}
+.btn-save-profile:hover {
+    background-color: #0c3394;
+}
+
+.btn-change-password {
+    background-color: var(--primary-blue);
+    color: white;
+}
+.btn-change-password:hover {
+    background-color: #0a2eae;
+}
+
+
+/* ----------------------------------- */
+/* Mensagens de Feedback               */
+/* ----------------------------------- */
+
+.alert { padding: 15px; margin-bottom: 20px; border-radius: 8px; font-weight: bold; }
+.error-message { background-color: #f8d7da; color: #721c24; border: 1px solid #f5c6cb; }
+.success-message { background-color: #d4edda; color: #155724; border: 1px solid #c3e6cb; }

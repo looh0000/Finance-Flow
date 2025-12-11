@@ -1,0 +1,129 @@
+/* Estilos Específicos para a Página do Bot (Chat) */
+
+.page-content {
+    padding: 30px;
+    background-color: #f0f4f7; /* Fundo leve para o chat */
+    min-height: calc(100vh - 72px);
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.chat-container {
+    max-width: 800px; 
+    width: 95%;
+    height: 80vh; /* Altura fixa para simular janela de chat */
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+}
+
+/* ----------------------------------- */
+/* Histórico de Conversa               */
+/* ----------------------------------- */
+
+.chat-history {
+    flex-grow: 1;
+    padding: 20px;
+    overflow-y: auto; /* Permite rolar o histórico */
+    border-bottom: 1px solid #eee;
+}
+
+.message {
+    display: flex;
+    margin-bottom: 15px;
+    align-items: flex-start;
+}
+
+.message p {
+    max-width: 70%;
+    padding: 10px 15px;
+    border-radius: 15px;
+    margin: 0;
+    font-size: 15px;
+    line-height: 1.4;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.message ion-icon {
+    font-size: 30px;
+    min-width: 30px;
+}
+
+/* Estilo para Mensagens do Bot */
+.bot-message {
+    justify-content: flex-start;
+}
+
+.bot-message .avatar {
+    color: #115bda;
+    margin-right: 10px;
+}
+
+.bot-message p {
+    background-color: #e3f2fd;
+    color: #333;
+    border-top-left-radius: 0;
+}
+
+/* Estilo para Mensagens do Usuário */
+.user-message {
+    justify-content: flex-end;
+    margin-right: 0;
+    margin-left: auto;
+}
+
+.user-message .avatar {
+    color: #555;
+    margin-left: 10px;
+}
+
+.user-message p {
+    background-color: #0077ff;
+    color: white;
+    border-top-right-radius: 0;
+}
+
+/* ----------------------------------- */
+/* Input e Envio                       */
+/* ----------------------------------- */
+
+.chat-input-form {
+    display: flex;
+    padding: 15px 20px;
+    background-color: #ffffff;
+}
+
+.chat-input-form input[type="text"] {
+    flex-grow: 1;
+    padding: 12px 15px;
+    border: 1px solid #ccc;
+    border-radius: 25px;
+    font-size: 16px;
+    margin-right: 10px;
+    outline: none;
+}
+
+.btn-send {
+    background-color: #10dc60;
+    color: white;
+    border: none;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.2s;
+}
+
+.btn-send ion-icon {
+    font-size: 20px;
+}
+
+.btn-send:hover {
+    background-color: #0abf5e;
+}

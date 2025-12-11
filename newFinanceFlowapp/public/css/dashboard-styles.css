@@ -1,0 +1,223 @@
+/* ========================================================== */
+/* ESTILOS GERAIS E LAYOUT DE DUAS COLUNAS (PC/DESKTOP)       */
+/* ========================================================== */
+
+body {
+    background-color: #f0f0f0; 
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    margin: 0;
+}
+
+/* O CONTAINER PRINCIPAL USA FLEX PARA DIVIDIR A TELA (SIDEBAR + MAIN AREA) */
+.web-layout-container {
+    display: flex;
+    min-height: 100vh;
+}
+
+/* ----------------------------------- */
+/* 1. BARRA LATERAL (SIDEBAR)          */
+/* ----------------------------------- */
+
+.sidebar {
+    width: 250px;
+    min-width: 250px;
+    background-color: #115bda; /* Cor principal, adaptada do ion-toolbar */
+    color: white;
+    padding: 20px 0;
+    box-shadow: 4px 0 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    /* Garante que o menu lateral tenha scroll se o conteúdo for grande */
+    overflow-y: auto; 
+}
+
+.sidebar-header {
+    text-align: center;
+    margin-bottom: 30px;
+    padding: 0 20px;
+}
+
+.sidebar-logo {
+    width: 60px;
+    height: auto;
+    margin-bottom: 10px;
+}
+
+.sidebar-header h3 {
+    margin: 0;
+    font-size: 1.4em;
+}
+
+.sidebar-menu {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    flex-grow: 1;
+}
+
+.sidebar-menu li a {
+    display: flex;
+    align-items: center;
+    padding: 12px 20px;
+    text-decoration: none;
+    color: white;
+    font-size: 15px;
+    transition: background-color 0.2s;
+}
+
+.sidebar-menu li a:hover,
+.sidebar-menu li a.active {
+    background-color: #0c3394; 
+}
+
+.sidebar-menu ion-icon {
+    font-size: 18px;
+    margin-right: 10px;
+}
+
+.btn-logout {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 15px 20px;
+    margin-top: 20px;
+    text-align: center;
+    text-decoration: none;
+    color: white;
+    background-color: #f44336;
+    font-weight: bold;
+    transition: background-color 0.2s;
+}
+.btn-logout ion-icon { margin-right: 8px; }
+.btn-logout:hover { background-color: #d32f2f; }
+
+
+/* ----------------------------------- */
+/* 2. ÁREA PRINCIPAL E CONTEÚDO        */
+/* ----------------------------------- */
+
+.main-area {
+    flex-grow: 1;
+    background-color: #ffffff;
+    overflow-y: auto; /* Garante que o conteúdo da área principal tenha scroll */
+}
+
+/* Header de Desktop */
+.desktop-header {
+    padding: 20px 30px;
+    background-color: #fff;
+    border-bottom: 1px solid #eee;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky; /* Fixa o cabeçalho no topo ao rolar */
+    top: 0;
+    z-index: 10;
+}
+
+.desktop-header h1 {
+    margin: 0;
+    color: #115bda;
+    font-size: 26px;
+}
+
+.user-widget {
+    display: flex;
+    align-items: center;
+    color: #555;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.user-widget .user-icon {
+    font-size: 32px;
+    margin-left: 10px;
+    color: #115bda;
+}
+
+.dashboard-content {
+    padding: 30px;
+    background: linear-gradient(to bottom, #e0f7fa, #ffffff);
+}
+
+/* --- SUMMARY CARDS (ROW 1) --- */
+.summary-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4 colunas em PC */
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.summary-card {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    border-left: 5px solid;
+    transition: transform 0.2s;
+}
+
+.summary-card:hover {
+    transform: translateY(-3px);
+}
+
+.summary-card h3 { margin: 0 0 10px 0; font-size: 14px; color: #666; text-transform: uppercase; }
+.summary-card .value { font-size: 28px; font-weight: bold; margin: 0; }
+
+.summary-card.total { border-color: #115bda; }
+.summary-card.income { border-color: #10dc60; }
+.summary-card.expense { border-color: #f44336; }
+.summary-card.profit { border-color: #ffc107; }
+
+/* --- MAIN CONTENT GRID (ROW 2: Chart and Widgets) --- */
+.main-content-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr; /* Coluna do Gráfico (2/3) e Widgets (1/3) */
+    gap: 30px;
+}
+
+/* Estilos do Gráfico (ion-card) */
+.chart-area {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.chart-area h2 { color: #115bda; font-size: 20px; margin-top: 0; }
+.chart-container { height: 350px; width: 100%; }
+
+/* Estilos de Widgets (Direita - ion-card) */
+.side-widgets { display: flex; flex-direction: column; gap: 20px; }
+
+.widget-card {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.widget-card h2 { font-size: 18px; color: #115bda; margin-top: 0; padding-bottom: 10px; border-bottom: 1px solid #eee; }
+
+/* Transações Recentes */
+.transaction-list { list-style: none; padding: 0; margin: 0; }
+.transaction-item { display: flex; align-items: center; padding: 10px 0; border-bottom: 1px solid #f9f9f9; }
+.transaction-item ion-icon { font-size: 20px; margin-right: 10px; min-width: 20px; }
+.transaction-item .description { flex-grow: 1; font-weight: bold; }
+.transaction-item .amount { font-weight: bold; }
+
+.transaction-item.income .amount { color: #10dc60; }
+.transaction-item.expense .amount { color: #f44336; }
+
+/* Botões de Ação na Dashboard */
+.action-buttons { display: flex; gap: 10px; margin-top: 20px; }
+.btn-full-width { flex-grow: 1; padding: 12px; text-align: center; text-decoration: none; border-radius: 8px; font-weight: bold; transition: background-color 0.2s; }
+
+.btn-primary { background-color: #3880ff; color: white; }
+.btn-secondary { background-color: #10dc60; color: white; }
+
+/* Alertas */
+.alert-list { list-style-type: none; padding: 0; margin: 0; color: #f44336; }
+.alert-list li { padding: 8px 0; font-size: 14px; }
+

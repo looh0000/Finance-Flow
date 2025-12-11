@@ -1,0 +1,135 @@
+/* ========== ESTILO GERAL ========== */
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: #1c73ff;
+    margin: 0;
+    padding: 0; 
+    transition: background 0.3s, color 0.3s;
+}
+
+.container {
+    width: 90%;
+    max-width: 420px;
+    margin: 50px auto;
+    background: white;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 0 12px rgba(0,0,0,0.15);
+    transition: background 0.3s, color 0.3s;
+}
+
+h2 {
+    text-align: center;
+    color: #008cba;
+}
+
+.input-field {
+    width: 100%;
+    height: 46px; /* <-- Fixando altura igual */
+    box-sizing: border-box; /* <-- Garante tamanho consistente */
+    padding: 10px 12px;
+    margin: 10px 0 20px 0;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    font-size: 15px;
+    appearance: none; /* <-- Faz SELECT e INPUT ficarem iguais */
+    transition: background 0.3s, color 0.3s, border 0.3s;
+}
+
+
+.btn {
+    width: 100%;
+    padding: 12px;
+    background-color: #1c73ff;
+    border: none;
+    color: #000;
+    font-weight: bold;
+    font-size: 16px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: opacity 0.3s;
+}
+
+.btn:hover {
+    opacity: 0.8;
+}
+
+.divider {
+    margin: 20px 0;
+    border: none;
+    border-bottom: 1px solid #ccc;
+}
+
+/* Timer */
+#timer {
+    margin: -5px 0 15px 0;
+    font-size: 14px;
+}
+
+/* Acessibilidade */
+.accessibility {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    margin-top: 20px;
+}
+
+.accessibility button {
+    padding: 10px;
+    border: none;
+    background: #ddd;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background 0.3s, color 0.3s;
+}
+
+.accessibility button:hover {
+    background: #ccc;
+}
+
+
+/* ==========================================
+                DARK MODE
+========================================== */
+
+body.dark-mode {
+    background-color: #0d0d0d !important;
+    color: #f1f1f1 !important;
+}
+
+body.dark-mode .container {
+    background: #1a1a1a !important;
+    color: #f1f1f1 !important;
+    box-shadow: 0 0 12px rgba(255,255,255,0.05);
+}
+
+body.dark-mode h2 {
+    color: #00e5ff !important;
+}
+
+body.dark-mode .input-field {
+    background: #2b2b2b !important;
+    color: #fff !important;
+    border: 1px solid #555 !important;
+}
+
+body.dark-mode .btn {
+    background: #00e5ff !important;
+    color: #000 !important;
+}
+
+body.dark-mode .divider {
+    border-color: #444 !important;
+}
+
+body.dark-mode #timer,
+body.dark-mode #countdown {
+    color: #f1f1f1 !important;
+}
+
+body.dark-mode .accessibility button {
+    background: #333 !important;
+    color: #fff !important;
+}

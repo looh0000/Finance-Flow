@@ -1,0 +1,243 @@
+/* Adaptação de src/app/metas/metas.page.scss para Layout Web/Desktop Otimizado */
+
+.page-content {
+    padding: 30px;
+    background-color: #ccc; /* Cor de fundo suave */
+    min-height: calc(100vh - 72px);
+}
+
+/* ----------------------------------- */
+/* 1. CARDS DE RESUMO E GRÁFICO (ROW 1)*/
+/* ----------------------------------- */
+
+.meta-summary-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1.5fr; /* 2 Cards pequenos + 1 Widget de Gráfico */
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.summary-goal-card {
+    background-color: #fff;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+    overflow: hidden;
+}
+
+.summary-goal-card h3 {
+    font-size: 14px;
+    color: #666;
+    margin: 0;
+    text-transform: uppercase;
+}
+
+.summary-goal-card .big-stat {
+    font-size: 32px;
+    font-weight: bold;
+    margin: 10px 0 0 0;
+}
+
+.summary-goal-card ion-icon {
+    position: absolute;
+    bottom: -10px;
+    right: -10px;
+    font-size: 60px;
+    opacity: 0.1;
+    color: #115bda;
+}
+
+.summary-goal-card.total-value { border-left: 5px solid #0077ff; }
+.summary-goal-card.total-value .big-stat { color: #0077ff; }
+
+.summary-goal-card.completed { border-left: 5px solid #10dc60; }
+.summary-goal-card.completed .big-stat { color: #10dc60; }
+
+/* Widget de Gráfico */
+.chart-widget-goal {
+    grid-column: 3 / 4;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+.chart-widget-goal h2 {
+    color: #115bda;
+    font-size: 20px;
+    margin-top: 0;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 10px;
+}
+.chart-container-goal {
+    height: 200px; /* Altura ideal para o gráfico de pizza no widget */
+    width: 100%;
+}
+
+
+/* ----------------------------------- */
+/* 2. FORMULÁRIO E LISTA (ROW 2)       */
+/* ----------------------------------- */
+
+.main-meta-content {
+    display: grid;
+    grid-template-columns: 1.5fr 2.5fr; /* Formulário (menor) à esquerda, Lista (maior) à direita */
+    gap: 30px;
+}
+
+/* Formulário de Nova Meta */
+.new-goal-card {
+    background-color: #ffffff;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    height: fit-content;
+}
+
+.new-goal-card h2 {
+    color: #115bda;
+    font-size: 20px;
+    margin-top: 0;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #eee;
+    padding-bottom: 10px;
+}
+
+.goal-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.goal-form input,
+.goal-form select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    background-color: #fafafab9;
+    font-size: 15px;
+    box-sizing: border-box;
+}
+
+.btn-save-goal {
+    padding: 15px;
+    border: none;
+    border-radius: 10px;
+    background-color: #0b67e7;
+    color: white;
+    font-size: 18px;
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.btn-save-goal:hover { background-color: #337fe2; }
+
+
+/* Lista de Metas Ativas */
+.goals-list-section {
+    background-color: #ffffff;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    max-height: 80vh; /* Limita a altura para rolar a lista */
+    overflow-y: auto;
+}
+
+.goals-list-section h2 {
+    color: #333;
+    font-size: 22px;
+    margin-top: 0;
+    margin-bottom: 15px;
+    border-bottom: 2px solid #ddd;
+    padding-bottom: 8px;
+}
+
+.goals-list {
+    list-style: none;
+    padding: 0;
+}
+
+.goal-item {
+    background-color: #f7f7f7;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+    margin-bottom: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-left: 5px solid #0b67e7;
+}
+
+.goal-details {
+    flex-grow: 1;
+}
+
+.goal-details h3 {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #333;
+    margin: 0 0 5px 0;
+}
+
+.progress-bar-container {
+    width: 95%;
+    background-color: #e0e0e0;
+    border-radius: 5px;
+    margin: 5px 0;
+    height: 10px;
+}
+
+.progress-bar {
+    height: 10px;
+    background-color: #10dc60;
+    border-radius: 5px;
+    transition: width 0.5s ease;
+}
+
+.progress-text {
+    font-size: 0.85rem !important;
+    font-weight: 600;
+    color: #666 !important;
+}
+
+.goal-actions {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    white-space: nowrap;
+}
+
+.status-badge {
+    padding: 5px 10px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.status-em-progresso { background-color: #fff3e0; color: #ffc107; }
+.status-concluída { background-color: #d4edda; color: #10dc60; }
+.status-nao-iniciada { background-color: #f7f7f7; color: #999; border: 1px solid #ccc; }
+
+.btn-delete-goal {
+    background-color: #f44336;
+    color: white;
+    text-decoration: none;
+    padding: 8px 15px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    transition: background-color 0.2s;
+}
+
+.btn-delete-goal:hover { background-color: #d32f2f; }
+
+/* Mensagens de Feedback */
+.alert { padding: 15px; margin-bottom: 20px; border-radius: 8px; font-weight: bold; }
+.error-message { background-color: #f8d7da; color: #721c24; border: 1px solid #f5c6cb; }
+.success-message { background-color: #d4edda; color: #155724; border: 1px solid #c3e6cb; }
